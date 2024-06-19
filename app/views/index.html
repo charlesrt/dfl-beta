@@ -1,20 +1,170 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/no-header.html" %}
 
 {% set pageName="Home" %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <span class="govuk-caption-l">Design prototypes for</span>
+      <h1 class="govuk-heading-xl">
+        Search enhancements
+      </h1>
+  
+      <p>Different prototypes have been created to test specific scenarios and interactions for how we might implement solutions that work in the future.</p> 
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+      <p><strong>Before you start:</strong></p>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          This is not a real product or service. You should only continue if you have been invited to test this prototype.
+        </li>
+        <li>
+          This prototype is intended to communicate and test functional ideas only. <strong>All visual design is illustrative only for prototyping purposes and not to be used for comparison to delivered product(s)</strong>.
+        </li>
+        <li>
+          Data entered is stored locally only for the duration of your session. If you need to you can <a href="/manage-prototype/clear-data">clear data</a>.
+        </li>
+      </ul>
+  
+      <h2 class="govuk-heading-l">
+        Prototypes
+      </h2>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+      <span class="govuk-caption-m">Users need to</span>
+      <h2 class="govuk-heading-m">
+        Understand the logic behind search
+      </h2>
+
+      <p><a href="/results-mark-population">Highlight search strings within results to increase result relevancy</a> <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p class="govuk-body-s">Research discussion:</p> 
+
+      <ul class="govuk-body-s govuk-list govuk-list--bullet">
+        <li>
+          Do users understand the relationship between what was searched and the results?
+        </li>
+        <li>
+          What do users assume of search results without highlighting?
+        </li>
+      </ul>
+
+      <p><a href="/filter-search">Increase visibility of selected filters within search results</a> <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p class="govuk-body-s">Research discussion:</p> 
+
+      <ul class="govuk-body-s govuk-list govuk-list--bullet">
+        <li>
+          Do users understand the faceted view of the results? 
+        </li>
+        <li>
+          Do users understand the AND/OR relationship between facets?
+        </li>
+        <li>
+          How do users react to knowing that some relevant results aren't presented under a filtered view because those filters aren't available in the metadata?
+        </li>
+        <li>
+          Do users know how to remove filters?
+        </li>
+      </ul>
+
+      <p><a href="/advanced-search">Advanced search logic for specificity including operators such as AND and OR</a> <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p class="govuk-body-s">Research discussion:</p> 
+
+      <ul class="govuk-body-s govuk-list govuk-list--bullet">
+        <li>
+          Are user familiar with the formatting of advanced search queries using operators?
+        </li>
+        <li>
+          If not, do users understand how they would use them based on the content available?
+        </li>
+        <li>
+          Do users use the quick links or follow the examples given?
+        </li>
+      </ul>
+
+      <span class="govuk-caption-m">Users need </span>
+      <h2 class="govuk-heading-m">
+        Filtering to match their expectations
+      </h2>
+
+      <p>Increase usability and visibility of filter options available <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p>Increase clarity of filters being selected/unselected <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/filter-sidebar-file-formats">Filters, with data formats</a>
+        </li>
+        <li>
+          <a href="/filter-sidebar-content-types">Filters, with content types</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body-s">Research discussion:</p> 
+
+      <ul class="govuk-body-s govuk-list govuk-list--bullet">
+        <li>
+          Starting with data formats, then content types, how do users need to filter their search?
+        </li>
+        <li>
+          Do users undertand the filter sections available?
+        </li>
+        <li>
+          Do users show/hide filter sections as needed?
+        </li>
+        <li>
+          Do users scroll through filter options within sections to find the filter they're looking for?
+        </li>
+        <li>
+          What do users assume of filters sorted by most results first?
+        </li>
+        <li>
+          Do users understand the number of filters selected within a section?
+        </li>
+        <li>
+          Do know how to select and unselect filters?
+        </li>
+      </ul>
+
+      <p><a href="/filter-search">Increase visibility of selected filters within search results</a> <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p><a href="/filter-search">Allow removal of filters within search results</a> <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p class="govuk-body-s">Research discussion:</p> 
+
+      <ul class="govuk-body-s govuk-list govuk-list--bullet">
+        <li>
+          Do users understand the faceted view of the results? 
+        </li>
+        <li>
+          Do users understand the AND/OR relationship between facets?
+        </li>
+        <li>
+          How do users react to knowing that some relevant results aren't presented under a filtered view because those filters aren't available in the metadata?
+        </li>
+        <li>
+          Do users know how to remove filters?
+        </li>
+      </ul>
+
+      <p><a href="/clean-search">Allow a clean search to be started</a> <strong class="govuk-tag govuk-tag--green">Ready</strong></p> 
+
+      <p class="govuk-body-s">Research discussion:</p> 
+
+      <ul class="govuk-body-s govuk-list govuk-list--bullet">
+        <li>
+          Do users know how to start a clean search?
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+      <p><a href="search">Complete prototype combining multiple needs together to show an example of what the future might look like</a> </p> 
+  
+    </div>
   </div>
-</div>
-
+    
 {% endblock %}

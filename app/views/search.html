@@ -1,0 +1,55 @@
+{% extends "/layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {% include '/layouts/includes/filter.html' %}
+
+  </div>
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set formAction="results" %}
+    {% set searchHeading="Search 1,104 datasets" %}
+    {% set searchHint="For example, population, economy, or state of London." %}
+
+    <form action="{{formAction}}" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="inputSearch">
+            {{searchHeading}}
+          </label>
+        </h1>
+    
+        <div id="inputSearch-hint" class="govuk-hint">
+          {{searchHint}}
+        </div>
+    
+        <input class="govuk-input" id="inputSearch" name="inputSearch" type="text" aria-describedby="inputSearch-hint">
+    
+        {% include '/layouts/includes/filter-tags.html' %}
+      </div>
+    
+      {% include '/layouts/includes/advanced-search.html' %}
+    
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Search
+        </button>
+        <a class="govuk-link" href="#">Start new search</a>
+      </div>
+      
+    </form>
+    
+    {% include '/layouts/includes/results.html' %}
+    
+  </div>
+</div>
+    
+{% endblock %}

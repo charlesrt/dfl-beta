@@ -4,3 +4,75 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+
+{% block header %}
+<header>
+    <div class="dfl-header govuk-header">
+        <img src="https://www.london.gov.uk/themes/estate/gla_core_theme/images/logo-mayoral.svg?sa9zah" alt="Mayor of London logo" width="207" height="16" role="presentation">
+        <img src="https://www.london.gov.uk/themes/estate/gla_core_theme/images/logo-assembly.svg?sa9zah" alt="London Assembly logo" width="194" height="16" role="presentation">
+    </div>
+    <div class="govuk-header" data-module="govuk-header">
+        <div class="govuk-header__container govuk-width-container">
+            <!-- <div class="govuk-header__content"> -->
+            <a href="/" class="govuk-header__link govuk-header__service-name">
+                Data for London
+            </a>
+            <nav aria-label="Menu" class="govuk-header__navigation">
+                <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>
+                Menu
+                </button>
+                <ul id="navigation" class="govuk-header__navigation-list">
+                    <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+                        <a class="govuk-header__link" href="/search">
+                        Search
+                        </a>
+                    </li>
+                    <li class="govuk-header__navigation-item">
+                        <a class="govuk-header__link" href="/glossary">
+                        Glossary
+                        </a>
+                    </li>
+                    <li class="govuk-header__navigation-item">
+                        <a class="govuk-header__link" href="sign-in">
+                        Sign in
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- </div> -->
+        </div>
+    </div>
+</header>
+
+<div class="govuk-width-container">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag govuk-tag--pink">
+          Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a preview of the new Data for London platform. <a class="govuk-link" href="#">Learn more about Data for London</a> or  <a class="govuk-link" href="#">return to the London Datastore</a>.
+        </span>
+      </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Prototype home"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}

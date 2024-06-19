@@ -1,0 +1,38 @@
+<form action="{{formAction}}" method="post" novalidate>
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="inputSearch">
+        {{searchHeading}}
+      </label>
+    </h1>
+
+    <div id="inputSearch-hint" class="govuk-hint">
+      {{searchHint}}
+    </div>
+
+    <input class="govuk-input" id="inputSearch" name="inputSearch" type="text" aria-describedby="inputSearch-hint">
+
+    <ul id="filter-tags" class="govuk-body-s filter-tags">
+      <li id="special-li"><strong>In:</strong></li>
+      <li><a class="filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Demographics</a> or</li>
+      <li><a class="filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Housing</a> or</li>
+      <li><a class="filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Borough</a> or</li>
+      <li><a class="filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> ogl-v2</a></li>
+    </ul>
+  </div>
+
+  {% include '/layouts/includes/advanced-search.html' %}
+
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Search
+    </button>
+    <a class="govuk-link" href="#">Start new search</a>
+  </div>
+  
+</form>
+
+
+
+

@@ -28,8 +28,8 @@
                 {% for i in formats %}
       
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="filter-{{i}}" name="filter-{{i}}" type="checkbox" value="1">
-                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i}}">
+                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
+                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
                     {{i.name}} ({{i.count}})
                   </label>
                 </div>
@@ -124,8 +124,8 @@
                 {% for i in smallest_geography %}
       
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="filter-{{i}}" name="filter-{{i}}" type="checkbox" value="1">
-                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i}}">
+                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
+                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
                     {{i.name}} ({{i.count}})
                   </label>
                 </div>
@@ -165,7 +165,7 @@
                 {% for i in publishers %}
       
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="filter-{{i}}" name="filter-{{i}}" type="checkbox" value="1">
+                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
                   <label class="govuk-label govuk-checkboxes__label" for="filter-{{i}}">
                     {{i.name}} ({{i.count}})
                   </label>
@@ -256,8 +256,8 @@
                 {% for i in licenses %}
       
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="filter-{{i}}" name="filter-{{i}}" type="checkbox" value="1">
-                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i}}">
+                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
+                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
                     {{i.name}} ({{i.count}})
                   </label>
                 </div>

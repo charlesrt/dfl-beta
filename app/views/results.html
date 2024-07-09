@@ -10,7 +10,7 @@
   {% set searchHeading="Search results for" %}
   {% set searchHint="Showing 667 results." %}
 
-  <div class="govuk-grid-column-one-quarter">
+  <div id="sidebar" class="govuk-grid-column-one-quarter">
 
     <h1 class="govuk-heading-m">
       Filter by:
@@ -53,10 +53,10 @@
 
     <ul class="govuk-body-s filter-tags">
       <li><strong>Order by:</strong></li>
-      <li><a href="#">Relevance</a> | </li>
-      <li><a href="#">Last updated</a> | </li>
-      <li><a href="#">Name (A-Z)</a> | </li>
-      <li><a href="#">Name (Z-A)</a></li>
+      <li><a class="govuk-link" href="#">Relevance</a> | </li>
+      <li><a class="govuk-link" href="#">Last updated</a> | </li>
+      <li><a class="govuk-link" href="#">Name (A-Z)</a> | </li>
+      <li><a class="govuk-link" href="#">Name (Z-A)</a></li>
     </ul>
     
     {% include '/layouts/includes/results-marked.html' %}

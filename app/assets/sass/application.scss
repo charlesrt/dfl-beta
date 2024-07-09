@@ -132,6 +132,9 @@ a.govuk-link {
 
 .govuk-input, .govuk-button, .govuk-checkboxes__label::before, .govuk-tag {
     border-radius: 4px;
+}
+
+.govuk-tag {
     margin-top: 2px;
     margin-bottom: 2px;
 }
@@ -268,5 +271,5 @@ a.filter__tag {
 #sidebar {
     // background-color: govuk-colour("light-grey");
     // border: 1px solid govuk-colour("mid-grey");
-    padding-top: 10px;
+    // padding-top: 10px;
 }

@@ -1,7 +1,7 @@
     
     {% set random = [1,2,3,4,5,6,7,8,9,10] %}
 
-    {% include '/layouts/includes/filter-tags.html' %}
+    {% include '/layouts/includes-sprint-2/filter-tags.html' %}
         
     <div class="govuk-accordion accordion-no-show-all" data-module="govuk-accordion" id="accordion-with-summary-sections">
 
@@ -25,7 +25,7 @@
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19" id="accordion-with-summary-sections-heading-1">
-              Formats
+              Data formats
             </span>
           </h2>
           <!-- <p id="filter-count3" class="filter-count"></p> -->
@@ -37,15 +37,92 @@
       
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
-                {% set formats = [ { name: 'Spreadsheet', count: 687 }, { name: 'PDF', count: 342 }, { name: 'CSV', count: 249 }, { name: 'Website', count: 138 }, { name: 'ZIP', count: 116 }, { name: 'Document', count: 42 }, { name: 'GeoPackage', count: 31 }, { name: 'Shapefile', count: 24 }, { name: 'XML', count: 24 }, { name: 'Image', count: 17 }, { name: 'data', count: 11 }, { name: 'API Endpoint', count: 10 }, { name: 'Slideshow', count: 7 }, { name: 'xlsm', count: 7 }, { name: 'rds', count: 5 }, { name: 'GeoJSON', count: 3 }, { name: 'Plain Text', count: 3 }, { name: 'JSON', count: 2 }, { name: 'msg', count: 2 }, { name: 'bin', count: 1 }, { name: 'db', count: 1 }, { name: 'dwg', count: 1 }, { name: 'Google Sheet', count: 1 }, { name: 'kml', count: 1 }, { name: 'skp', count: 1 }, { name: 'tab', count: 1 }, { name: 'url', count: 1 }, { name: 'wav', count: 1 }, { name: 'Web Map', count: 1 } ] %}
-
-                {% for i in formats %}
+                {% set data_content_types = [
+                  {
+                    name: 'Tables',
+                    count: 981,
+                    file_types: [
+                      { name: 'csv', count: 249 },
+                      { name: 'Spreadsheet', count: 687 },
+                      { name: 'xlsm', count: 7 },
+                      { name: 'tab', count: 1 },
+                      { name: 'Google Sheet', count: 1 }
+                    ]
+                  },
+                  {
+                    name: 'Reports',
+                    count: 344,
+                    file_types: [
+                      { name: 'PDF File', count: 342 },
+                      { name: 'Document', count: 42 },
+                      { name: 'Slideshow', count: 7 }
+                    ]
+                  },
+                  {
+                    name: 'Geospatial',
+                    count: 80,
+                    file_types: [
+                      { name: 'GeoPackage', count: 31 },
+                      { name: 'Shapefile', count: 24 },
+                      { name: 'GeoJSON', count: 3 },
+                      { name: 'Web Map', count: 1 },
+                      { name: 'kml', count: 1 }
+                    ]
+                  },
+                  {
+                    name: 'Web and API',
+                    count: 10,
+                    file_types: [
+                      { name: 'Website', count: 138 },
+                      { name: 'URL', count: 1 },
+                      { name: 'API Endpoint', count: 10 }
+                    ]
+                  },
+                  {
+                    name: 'Compressed',
+                    count: 116,
+                    file_types: [
+                      { name: 'ZIP File', count: 116 }
+                    ]
+                  },
+                  {
+                    name: 'Image',
+                    count: 17,
+                    file_types: [
+                      { name: 'Image', count: 17 }
+                    ]
+                  },
+                  {
+                    name: 'Database',
+                    count: 20,
+                    file_types: [
+                      { name: 'JSON File', count: 2 },
+                      { name: 'Data', count: 11 },
+                      { name: 'RDS', count: 5 },
+                      { name: 'DB', count: 1 },
+                      { name: 'BIN', count: 1 },
+                      { name: 'XML File', count: 24 }
+                    ]
+                  },
+                  {
+                    name: 'Other',
+                    count: 1,
+                    file_types: [
+                      { name: 'WAV', count: 1 }
+                    ]
+                  }
+                ] %}
+      
+                {% for i in data_content_types %}
       
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
+                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="{{i.name}}" aria-describedby="filter-{{i.name}}-hint">
                   <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
                     {{i.name}} ({{i.count}})
                   </label>
+                  <div id="filter-{{i.name}}-hint" class="govuk-hint govuk-checkboxes__hint">
+                    {% for i in i.file_types %}{{ i.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                  </div>
                 </div>
 
                 {% endfor %}

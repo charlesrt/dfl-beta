@@ -1,0 +1,313 @@
+{% extends "/layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+
+{% block breadcrumbs %}
+
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search">Search</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      GLA Population Projection - Custom Age Tables
+    </li>
+  </ol>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      GLA Population Projection - Custom Age Tables
+    </h1>
+
+    <p class="govuk-body-s">
+      GLA Demography • Updated 3 months ago
+    </p>
+
+    <div class="download-panel--all govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Download all
+      </button>
+      <p>
+        7 files (Spreadsheet) • 148.69 MB • <a href="#datasets" class="govuk-link">Skip to datasets</a>
+      </p>
+    </div>
+
+    <p>
+      This Excel based tool enables users to query the raw single year of age data so that any age range can easily be calculated without having to carry out often complex, and time consuming formulas that could also be open to human error. Each year the GLA demography team produce sets of population projections.
+    </p>
+
+    <p>
+      The full raw data by single year of age (SYA) and gender are available as Datastore packages at the links below.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      How to use the tool
+    </h2>
+
+    <p>
+      Simply select the lower and upper age range for both males and females (starting in cell C3) and the spreadsheet will return the total population for the range.
+    </p>
+
+    <p>
+      Find out more about GLA population projections on the <a class="govuk-link" href="#">GLA Demographic Projections page</a>
+    </p>
+
+    <p>
+      Click here for an <a class="govuk-link" href="#">archive of population projections from previous years that have since been superseded.</a>
+    </p>
+
+    <h2 class="govuk-heading-m">
+      2019-based projections (published November 2020)
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Central range (upper bound)</li>
+      <li>Central range (lower bound)</li>
+      <li>Low population variant</li>
+      <li>High population variant</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">
+      2016-based projections (published July 2017)
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Housing-linked projection incorporating data from the 2016 SHLAA </li>
+      <li>Ward-level projections consistent with the borough housing-led model</li>
+      <li>Ethnic group projections consistent with the borough housing-led model (50MB file)</li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 id="datasets" class="govuk-heading-l">
+      Datasets
+    </h2>
+
+    {% set dataset_details = [
+      {
+          "title": "Ward population projections",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/0d24f0a2-e687-4049-b610-777b053f9865/Ward%20population%20projections.spreadsheet",
+          "desc": "2016-based ward-level population projections (constrained to the 2016-based housing-led projection, 2011 wards)",
+          "additional_information": {
+              "data_last_updated": "12 April 2018",
+              "metadata_last_updated": "14 April 2023",
+              "created": "12 April 2018",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "7243421504d94141624387b1e276f1d9-11",
+              "id": "0d24f0a2-e687-4049-b610-777b053f9865",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 0,
+              "size": "54.4 MB",
+              "state": "active"
+          }
+      },
+      {
+          "title": "Housing-led Ethnic Group",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/2b74a52d-0136-4f6d-a8f0-295f400df1d7/Housing-led%20Ethnic%20Group.spreadsheet",
+          "desc": "2016-based ethnic group population projections (constrained to 2016-based housing-led population projections)",
+          "additional_information": {
+              "data_last_updated": "6 April 2018",
+              "metadata_last_updated": "14 April 2023",
+              "created": "6 April 2018",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "d5a26f0f067950ec462ea603636fbc6c-11",
+              "id": "2b74a52d-0136-4f6d-a8f0-295f400df1d7",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 1,
+              "size": "51.2 MB",
+              "state": "active"
+          }
+      },
+      {
+          "title": "Central Range (upper bound)",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/4c7f998b-ae3a-4558-8ae1-b976a2b16382/Central%20Range%20%28upper%20bound%29.spreadsheet",
+          "desc": "2019-based trend projection Central Range (upper bound)",
+          "additional_information": {
+              "data_last_updated": "8 April 2021",
+              "metadata_last_updated": "14 April 2023",
+              "created": "8 April 2021",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "5cbfdb7823f6a9ace67f69fa6cd5b797",
+              "id": "4c7f998b-ae3a-4558-8ae1-b976a2b16382",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 2,
+              "size": "9.1 MB",
+              "state": "active"
+          }
+      },
+      {
+          "title": "Central Range (lower bound)",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/4c81c6fa-648f-46f1-bc93-42d21b0067a1/Central%20Range%20%28lower%20bound%29.spreadsheet",
+          "desc": "2019-based trend projection Central Range (lower bound)",
+          "additional_information": {
+              "data_last_updated": "8 April 2021",
+              "metadata_last_updated": "14 April 2023",
+              "created": "8 April 2021",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "47aded8d8de258177a3b599f2bbfa676",
+              "id": "4c81c6fa-648f-46f1-bc93-42d21b0067a1",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 3,
+              "size": "9.1 MB",
+              "state": "active"
+          }
+      },
+      {
+          "title": "Housing-led population projection",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/5b389c26-f5e4-47ce-88df-a8cce3a9b7e0/Housing-led%20population%20projection.spreadsheet",
+          "desc": "2016-based housing-led population projection",
+          "additional_information": {
+              "data_last_updated": "18 May 2018",
+              "metadata_last_updated": "14 April 2023",
+              "created": "18 May 2018",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "92f922c5f5fffbd26cad6df87aebb5ed",
+              "id": "5b389c26-f5e4-47ce-88df-a8cce3a9b7e0",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 4,
+              "size": "6.3 MB",
+              "state": "active"
+          }
+      },
+      {
+          "title": "High Population variant",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/7fb72b54-a4ee-4926-9011-a29cc12428aa/%20High%20Population%20variant.spreadsheet",
+          "desc": "2019-based trend projection High Population variant",
+          "additional_information": {
+              "data_last_updated": "8 April 2021",
+              "metadata_last_updated": "14 April 2023",
+              "created": "8 April 2021",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "130ebfed512c7e0ad9917b33f6bd6bc9",
+              "id": "7fb72b54-a4ee-4926-9011-a29cc12428aa",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 5,
+              "size": "9.1 MB",
+              "state": "active"
+          }
+      },
+      {
+          "title": "Low Population variant",
+          "url": "https://data.london.gov.uk/download/gla-population-projections-custom-age-tables/af51a79b-50df-43cc-a658-0865ca4af7a9/Low%20Population%20variant.spreadsheet",
+          "desc": "2019-based trend projection Low Population variant",
+          "additional_information": {
+              "data_last_updated": "8 April 2021",
+              "metadata_last_updated": "14 April 2023",
+              "created": "8 April 2021",
+              "format": "spreadsheet",
+              "license": "ogl-v2",
+              "has_views": "false",
+              "hash": "1c67c21ca992d7ca54bdb40b8004d9f5",
+              "id": "af51a79b-50df-43cc-a658-0865ca4af7a9",
+              "package_id": "a713a4be-0891-42f0-b5d4-3bcb7e7525a0",
+              "position": 6,
+              "size": "9.1 MB",
+              "state": "active"
+          }
+      }
+  ] %}
+
+    {% for i in dataset_details %}
+
+    <h3 class="govuk-heading-m">
+      {{i.title}}
+    </h3>
+
+    <p>
+      {{i.desc}}
+    </p>
+
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Download
+      </button>
+      <a class="govuk-link" href="{{i.url}}">Copy link to file</a>
+    </div>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <dl class="govuk-summary-list">
+          {% for key, value in i.additional_information %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{key}}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{value}}
+            </dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </div>
+      
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    {% endfor %}
+
+    <h2 class="govuk-heading-m">
+      Metadata
+    </h2>
+
+    {% set meta_details = [
+      {
+          "author": "GLA Intelligence Unit",
+          "maintainer": "Opinion Research and General Statistics (GLA)",
+          "last_updated": "14 April 2023",
+          "created": "12 April 2013",
+          "update_frequency": "Annually",
+          "smallest_geography": "Ward",
+          "license": "ogl-v2"
+      }
+      ] %}
+
+      {% for i in meta_details %}
+
+    <dl class="govuk-summary-list">
+      {% for key, value in i %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          {{key}}
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{value}}
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+
+    {% endfor %}
+   
+  </div>
+
+</div>
+    
+{% endblock %}

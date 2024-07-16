@@ -273,3 +273,13 @@ a.filter__tag {
     // border: 1px solid govuk-colour("mid-grey");
     // padding-top: 10px;
 }
+
+.download-panel--all {
+    border: 2px solid var(--t-colors-pink-dark);
+    border-left: 10px solid var(--t-colors-pink-dark);
+    background-color: govuk-colour("light-grey");
+    padding: 30px;
+    .govuk-button, p {
+        margin-bottom: 0;
+    }
+}

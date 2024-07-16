@@ -279,7 +279,7 @@ a.filter__tag {
     border-left: 10px solid var(--t-colors-pink-dark);
     background-color: govuk-colour("light-grey");
     padding: 30px;
-    .govuk-button, p {
+    .govuk-button, p, .govuk-link {
         margin-bottom: 0;
     }
 }

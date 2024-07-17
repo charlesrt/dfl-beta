@@ -239,6 +239,8 @@
       {{i.desc}}
     </p>
 
+    <p class="govuk-body-s">{{i.additional_information.format}} • {{i.additional_information.size}} • {{i.additional_information.license}}</p>
+
     <div class="govuk-button-group">
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Download
@@ -249,24 +251,25 @@
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          Details
+          More details
         </span>
       </summary>
       <div class="govuk-details__text">
         <dl class="govuk-summary-list">
           {% for key, value in i.additional_information %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              {{key}}
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{value}}
-            </dd>
-          </div>
+            {% if key !== "size" and key !== "format" and key !== "license" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-body-s">
+                {{key}}
+              </dt>
+              <dd class="govuk-summary-list__value govuk-body-s">
+                {{value}}
+              </dd>
+            </div>
+            {% endif %}
           {% endfor %}
         </dl>
       </div>
-      
     </details>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -294,10 +297,10 @@
     <dl class="govuk-summary-list">
       {% for key, value in i %}
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key govuk-body-s">
           {{key}}
         </dt>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value govuk-body-s">
           {{value}}
         </dd>
       </div>

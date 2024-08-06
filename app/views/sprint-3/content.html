@@ -5,7 +5,16 @@
 
 {% block breadcrumbs %}
 
-<a href="search" class="govuk-back-link">Back to search results</a>
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search">Search</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      GLA Population Projection - Custom Age Tables
+    </li>
+  </ol>
+</nav>
 
 {% endblock %}
 
@@ -14,29 +23,24 @@
 
 <div class="govuk-grid-row">
     
-  <div class="govuk-grid-column-full">
-
-    <div class="govuk-form-group govuk-!-margin-3" style="float:right;">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        <svg class="gem-c-plus__icon" width="18" height="18" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M55 42.5H42.5V55C42.5 56.375 41.3825 57.5 40 57.5C38.6175 57.5 37.5 56.375 37.5 55V42.5H25C23.6175 42.5 22.5 41.375 22.5 40C22.5 38.625 23.6175 37.5 25 37.5H37.5V25C37.5 23.625 38.6175 22.5 40 22.5C41.3825 22.5 42.5 23.625 42.5 25V37.5H55C56.3825 37.5 57.5 38.625 57.5 40C57.5 41.375 56.3825 42.5 55 42.5ZM40 0C17.9075 0 0 17.9 0 40C0 62.1 17.9075 80 40 80C62.0925 80 80 62.1 80 40C80 17.9 62.0925 0 40 0Z" fill="currentColor"/>
-          </svg>
-          
-          Follow
-      </button>
-    </div>
-    
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
       GLA Population Projection - Custom Age Tables
     </h1>
 
-    </div>
-    <div class="govuk-grid-column-two-thirds">
-
     <p class="govuk-body-s">
-      <a href="search?inputSearch=GLA%20Demography" class="govuk-link">GLA Demography</a> • Updated 3 months ago
+      GLA Demography • Updated 3 months ago
     </p>
+
+    <div class="download-panel--all govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Download all
+      </button>
+      <p>
+        7 files (Spreadsheet) • 148.69 MB • <a href="#datasets" class="govuk-link">Skip to datasets</a>
+      </p>
+    </div>
 
     <p>
       This Excel based tool enables users to query the raw single year of age data so that any age range can easily be calculated without having to carry out often complex, and time consuming formulas that could also be open to human error. Each year the GLA demography team produce sets of population projections.
@@ -83,7 +87,11 @@
       <li>Ethnic group projections consistent with the borough housing-led model (50MB file)</li>
     </ul>
 
-    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 id="datasets" class="govuk-heading-l">
+      Datasets
+    </h2>
 
     {% set dataset_details = [
       {
@@ -221,204 +229,52 @@
       }
   ] %}
 
-  <div class="govuk-grid-column-full">
-
-  <div class="govuk-summary-card">
-    <div class="govuk-summary-card__title-wrapper">
-      <h2 class="govuk-summary-card__title">
-        Resources
-      </h2>
-    </div>
-    <div class="govuk-summary-card__content">
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dd class="govuk-summary-list__key">
-          </dd>
-          <dt class="govuk-summary-list__value">
-            <span class="govuk-body-s">Type
-          </dt>
-          <dt class="govuk-summary-list__value">
-            <span class="govuk-body-s">Size
-          </dt>
-          <dt class="govuk-summary-list__value">
-            <span class="govuk-body-s">From
-          </dt>
-          <dt class="govuk-summary-list__value">
-            <span class="govuk-body-s">To
-          </dt>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-
     {% for i in dataset_details %}
 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        {{i.title}} <br /><span class="govuk-body-s">{{i.desc}} </span> 
-        <details class="govuk-details govuk-!-margin-0">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text govuk-!-font-size-16">
-              More details
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <dl class="govuk-summary-list">
-              {% for key, value in i.additional_information %}
-                {% if key !== "size" and key !== "format" %}
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-body-s">
-                    {{key}}
-                  </dt>
-                  <dd class="govuk-summary-list__value govuk-body-s">
-                    {{value}}
-                  </dd>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </dl>
-          </div>
-        </details>
-      </dt>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">{{i.additional_information.format}}</span>
-      </dd>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">{{i.additional_information.size}}</span>
-      </dd>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">01/01/1990</span>
-      </dd>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">31/01/2010</span>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Download
-        </button>
-      </dd>
+    <h3 class="govuk-heading-m">
+      {{i.title}}
+    </h3>
+
+    <p>
+      {{i.desc}}
+    </p>
+
+    <p class="govuk-body-s">{{i.additional_information.format}} • {{i.additional_information.size}} • {{i.additional_information.license}}</p>
+
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Download
+      </button>
+      <a class="govuk-link" href="{{i.url}}">Copy link to file</a>
     </div>
-  
-      {% endfor %}
-  
-  </div>
-  </div>
-  </div>
 
-
-  <!-- <div class="govuk-summary-card">
-    <div class="govuk-summary-card__title-wrapper">
-      <h2 class="govuk-summary-card__title">
-        Resources
-      </h2>
-    </div>
-    <div class="govuk-summary-card__content">
-      <dl class="govuk-summary-list">
-
-    {% for i in dataset_details %}
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        {{i.title}} <br /><span class="govuk-body-s">{{i.desc}} </span> 
-        <details class="govuk-details govuk-!-margin-0">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text govuk-!-font-size-16">
-              More details
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <dl class="govuk-summary-list">
-              {% for key, value in i.additional_information %}
-                {% if key !== "size" and key !== "format" %}
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-body-s">
-                    {{key}}
-                  </dt>
-                  <dd class="govuk-summary-list__value govuk-body-s">
-                    {{value}}
-                  </dd>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </dl>
-          </div>
-        </details>
-      </dt>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">Type<br />{{i.additional_information.format}}</span>
-      </dd>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">Size<br />{{i.additional_information.size}}</span>
-      </dd>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">From<br /> 01/01/1990</span>
-      </dd>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body-s">To<br />31/01/2010</span>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Download
-        </button>
-      </dd>
-    </div>
-  
-      {% endfor %}
-  
-  </div>
-  </div> -->
-  
-
-  <!-- <ul class="govuk-task-list">
-
-  {% for i in dataset_details %}
-
-      <li class="govuk-task-list__item">
-        <div class="govuk-task-list__name-and-hint">
-            <strong>{{i.title}}</strong> <span class="govuk-body-s">({{i.additional_information.format}} • {{i.additional_information.size}} • 01/01/1990-31/01/2010)</span>
-          <div id="company-details-3-hint" class="govuk-body-s govuk-task-list__hint">
-          {{i.desc}}
-          </div>
-          <details class="govuk-details govuk-!-margin-0">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text govuk-!-font-size-16">
-                More details
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <dl class="govuk-summary-list">
-                {% for key, value in i.additional_information %}
-                  {% if key !== "size" and key !== "format" %}
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key govuk-body-s">
-                      {{key}}
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-body-s">
-                      {{value}}
-                    </dd>
-                  </div>
-                  {% endif %}
-                {% endfor %}
-              </dl>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          More details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <dl class="govuk-summary-list">
+          {% for key, value in i.additional_information %}
+            {% if key !== "size" and key !== "format" and key !== "license" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-body-s">
+                {{key}}
+              </dt>
+              <dd class="govuk-summary-list__value govuk-body-s">
+                {{value}}
+              </dd>
             </div>
-          </details>
-        </div>
-        <div class="govuk-task-list__name" id="company-details-1-status">
-          hello
-        </div>
-        <div class="govuk-task-list__status" id="company-details-1-status">
-          <div class="">
-            <button type="submit" class="govuk-button" data-module="govuk-button">
-              Download
-            </button>
-          </div>
-        </div>
-      </li>   
+            {% endif %}
+          {% endfor %}
+        </dl>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     {% endfor %}
-
-  </ul> -->
-
-  <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
       Metadata
@@ -442,14 +298,10 @@
       {% for key, value in i %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-body-s">
-          {{ key }}
+          {{key}}
         </dt>
         <dd class="govuk-summary-list__value govuk-body-s">
-          {% if key == "author" or key == "maintainer" %}
-            <a href="#" class="govuk-link">{{ value }}</a>
-          {% else %}
-            {{ value }}
-          {% endif %}
+          {{value}}
         </dd>
       </div>
       {% endfor %}

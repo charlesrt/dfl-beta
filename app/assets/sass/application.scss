@@ -283,3 +283,25 @@ a.filter__tag {
         margin-bottom: 0;
     }
 }
+
+.govuk-button--secondary {
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid govuk-colour("black");
+    background-color: govuk-colour("light-grey");
+    position: relative;
+    padding: 8px 10px 7px;
+    &:hover {
+        background-color: var(--t-colors-pink);
+        color: govuk-colour("white");
+    }
+}
+
+.gem-c-plus__icon {
+    vertical-align: bottom;
+}
+
+.govuk-summary-list__key {
+    width: 40%;
+}

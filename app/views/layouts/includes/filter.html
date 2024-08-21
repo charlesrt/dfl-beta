@@ -5,27 +5,26 @@
         
     <div class="govuk-accordion accordion-no-show-all" data-module="govuk-accordion" id="accordion-with-summary-sections">
 
-      <div class="govuk-accordion__section">
+      <!-- <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19" id="accordion-with-summary-sections-heading-1">
               Projects
             </span>
           </h2>
-          <!-- <p id="filter-count1" class="filter-count"></p> -->
         </div>
         <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
           <p class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-2">No project filters.</p>
 
         </div>
-      </div>
+      </div> -->
 
       <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
             <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19" id="accordion-with-summary-sections-heading-1">
-              Formats
+              Format
             </span>
           </h2>
           <!-- <p id="filter-count3" class="filter-count"></p> -->
@@ -37,7 +36,7 @@
       
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
-                {% set formats = [ { name: 'Spreadsheet', count: 687 }, { name: 'PDF', count: 342 }, { name: 'CSV', count: 249 }, { name: 'Website', count: 138 }, { name: 'ZIP', count: 116 }, { name: 'Document', count: 42 }, { name: 'GeoPackage', count: 31 }, { name: 'Shapefile', count: 24 }, { name: 'XML', count: 24 }, { name: 'Image', count: 17 }, { name: 'data', count: 11 }, { name: 'API Endpoint', count: 10 }, { name: 'Slideshow', count: 7 }, { name: 'xlsm', count: 7 }, { name: 'rds', count: 5 }, { name: 'GeoJSON', count: 3 }, { name: 'Plain Text', count: 3 }, { name: 'JSON', count: 2 }, { name: 'msg', count: 2 }, { name: 'bin', count: 1 }, { name: 'db', count: 1 }, { name: 'dwg', count: 1 }, { name: 'Google Sheet', count: 1 }, { name: 'kml', count: 1 }, { name: 'skp', count: 1 }, { name: 'tab', count: 1 }, { name: 'url', count: 1 }, { name: 'wav', count: 1 }, { name: 'Web Map', count: 1 } ] %}
+                {% set formats = [ { name: 'Tables', count: 1184 }, { name: 'Reports', count: 668 }, { name: 'Geospatial', count: 459 } ] %}
 
                 {% for i in formats %}
       
@@ -57,6 +56,42 @@
           </div>
         </div>
       </div>
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19" id="accordion-with-summary-sections-heading-2">
+              Organisations
+            </span>
+          </h2>
+          <!-- <p id="filter-count4" class="filter-count"></p> -->
+        </div>
+        <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+      
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                {% set publishers = [ { name: 'Greater London Authority (GLA)', count: 491 }, { name: 'Office for National Statistics (ONS)', count: 154 }, { name: 'Census Information Scheme', count: 50 }, { name: 'GLA Opinion Research', count: 46 }, { name: 'London Fire Brigade', count: 46 }, { name: 'Transport for London (TfL)', count: 43 }, { name: 'Department for Education', count: 27 }, { name: 'Ministry of Housing, Communities & Local Government (MHCLG)', count: 25 }, { name: 'Department for Work and Pensions', count: 19 }, { name: 'Department of Health', count: 19 }, { name: 'Planning Constraints Map', count: 15 }, { name: 'Metropolitan Police Service', count: 14 }, { name: 'UK Power Networks', count: 14 }, { name: 'GLA Demography', count: 13 }, { name: 'GLA and TFL Air Quality', count: 11 }, { name: 'London Legacy Development Corporation', count: 11 }, { name: 'Department for Business, Energy & Industrial Strategy (BEIS)', count: 7 }, { name: 'Department for Transport', count: 7 }, { name: 'HM Revenue & Customs', count: 6 }, { name: 'Department for Environment, Food and Rural Affairs', count: 5 }, { name: 'Environment Agency', count: 5 }, { name: 'Greenspace Information for Greater London CIC (GiGL)', count: 5 }, { name: 'Public Health England', count: 5 }, { name: 'Valuation Office Agency', count: 5 }, { name: 'Association of Public Health Observatories', count: 4 }, { name: 'CLEVER Cities - London partners', count: 4 }, { name: 'Department for Culture, Media and Sport', count: 4 }, { name: 'Experian Marketing Services', count: 3 }, { name: 'GLA Health Team', count: 3 }, { name: 'GLA Housing', count: 3 }, { name: 'Higher Education Statistics Agency', count: 3 }, { name: 'Land Registry', count: 3 }, { name: 'London Borough of Redbridge', count: 3 }, { name: 'London Borough of Southwark', count: 3 }, { name: 'Data Engineer test - 1', count: 2 }, { name: 'Data for London Harvesting Component', count: 2 }, { name: 'Department for Environment, Food & Rural Affairs', count: 2 }, { name: 'Food Standards Agency', count: 2 }, { name: 'GLA London Datastore team', count: 2 }, { name: 'Greater London Authority and Bloomberg Associates', count: 2 }, { name: 'Home Office', count: 2 }, { name: 'London Borough of Havering', count: 2 }, { name: 'London Borough of Newham', count: 2 }, { name: 'Mayor’s Office for Policing And Crime (MOPAC)', count: 2 }, { name: 'Ministry of Justice', count: 2 }, { name: 'Ordnance Survey', count: 2 }, { name: 'Sport England', count: 2 }, { name: 'Breadboard Labs', count: 1 }, { name: 'Burning glass', count: 1 }, { name: 'Cabinet Office', count: 1 }, { name: 'Capital Growth', count: 1 }, { name: 'City of London (RRP)', count: 1 }, { name: 'Civil Aviation Authority', count: 1 }, { name: 'Companies House', count: 1 }, { name: 'Council of Mortgage Lenders', count: 1 }, { name: 'Data Engineer test - 2', count: 1 }, { name: 'European Digital City index', count: 1 }, { name: 'Family and Childcare Trust', count: 1 }, { name: 'fDi Markets', count: 1 }, { name: 'GLA – London’s Skills Advisory Panel (Skills for Londoners Board)', count: 1 }, { name: 'GLA Communities and Social Policy Unit', count: 1 } ] %}
+
+                {% for i in publishers %}
+      
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
+                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
+                    {{i.name}} ({{i.count}})
+                  </label>
+                </div>
+
+                {% endfor %}
+      
+              </div>
+      
+            </fieldset>
+      
+          </div>
+        </div>
 
       <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header">
@@ -97,41 +132,7 @@
           </div>
         </div>
       </div>
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19" id="accordion-with-summary-sections-heading-2">
-              Organisation
-            </span>
-          </h2>
-          <!-- <p id="filter-count4" class="filter-count"></p> -->
-        </div>
-        <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
-          <div class="govuk-form-group">
-
-            <fieldset class="govuk-fieldset">
       
-              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-
-                {% set publishers = [ { name: 'Greater London Authority (GLA)', count: 491 }, { name: 'Office for National Statistics (ONS)', count: 154 }, { name: 'Census Information Scheme', count: 50 }, { name: 'GLA Opinion Research', count: 46 }, { name: 'London Fire Brigade', count: 46 }, { name: 'Transport for London (TfL)', count: 43 }, { name: 'Department for Education', count: 27 }, { name: 'Ministry of Housing, Communities & Local Government (MHCLG)', count: 25 }, { name: 'Department for Work and Pensions', count: 19 }, { name: 'Department of Health', count: 19 }, { name: 'Planning Constraints Map', count: 15 }, { name: 'Metropolitan Police Service', count: 14 }, { name: 'UK Power Networks', count: 14 }, { name: 'GLA Demography', count: 13 }, { name: 'GLA and TFL Air Quality', count: 11 }, { name: 'London Legacy Development Corporation', count: 11 }, { name: 'Department for Business, Energy & Industrial Strategy (BEIS)', count: 7 }, { name: 'Department for Transport', count: 7 }, { name: 'HM Revenue & Customs', count: 6 }, { name: 'Department for Environment, Food and Rural Affairs', count: 5 }, { name: 'Environment Agency', count: 5 }, { name: 'Greenspace Information for Greater London CIC (GiGL)', count: 5 }, { name: 'Public Health England', count: 5 }, { name: 'Valuation Office Agency', count: 5 }, { name: 'Association of Public Health Observatories', count: 4 }, { name: 'CLEVER Cities - London partners', count: 4 }, { name: 'Department for Culture, Media and Sport', count: 4 }, { name: 'Experian Marketing Services', count: 3 }, { name: 'GLA Health Team', count: 3 }, { name: 'GLA Housing', count: 3 }, { name: 'Higher Education Statistics Agency', count: 3 }, { name: 'Land Registry', count: 3 }, { name: 'London Borough of Redbridge', count: 3 }, { name: 'London Borough of Southwark', count: 3 }, { name: 'Data Engineer test - 1', count: 2 }, { name: 'Data for London Harvesting Component', count: 2 }, { name: 'Department for Environment, Food & Rural Affairs', count: 2 }, { name: 'Food Standards Agency', count: 2 }, { name: 'GLA London Datastore team', count: 2 }, { name: 'Greater London Authority and Bloomberg Associates', count: 2 }, { name: 'Home Office', count: 2 }, { name: 'London Borough of Havering', count: 2 }, { name: 'London Borough of Newham', count: 2 }, { name: 'Mayor’s Office for Policing And Crime (MOPAC)', count: 2 }, { name: 'Ministry of Justice', count: 2 }, { name: 'Ordnance Survey', count: 2 }, { name: 'Sport England', count: 2 }, { name: 'Breadboard Labs', count: 1 }, { name: 'Burning glass', count: 1 }, { name: 'Cabinet Office', count: 1 }, { name: 'Capital Growth', count: 1 }, { name: 'City of London (RRP)', count: 1 }, { name: 'Civil Aviation Authority', count: 1 }, { name: 'Companies House', count: 1 }, { name: 'Council of Mortgage Lenders', count: 1 }, { name: 'Data Engineer test - 2', count: 1 }, { name: 'European Digital City index', count: 1 }, { name: 'Family and Childcare Trust', count: 1 }, { name: 'fDi Markets', count: 1 }, { name: 'GLA – London’s Skills Advisory Panel (Skills for Londoners Board)', count: 1 }, { name: 'GLA Communities and Social Policy Unit', count: 1 } ] %}
-
-                {% for i in publishers %}
-      
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
-                  <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
-                    {{i.name}} ({{i.count}})
-                  </label>
-                </div>
-
-                {% endfor %}
-      
-              </div>
-      
-            </fieldset>
-      
-          </div>
-        </div>
 
         <div class="govuk-accordion__section">
           <div class="govuk-accordion__section-header">
@@ -167,6 +168,43 @@
                   ] %}
         
                   {% for i in data_frequencies %}
+        
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">
+                    <label class="govuk-label govuk-checkboxes__label" for="filter-{{i.name}}">
+                      {{i.name}} ({{i.count}})
+                    </label>
+                  </div>
+  
+                  {% endfor %}
+        
+                </div>
+        
+              </fieldset>
+        
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19" id="accordion-with-summary-sections-heading-1">
+                File type
+              </span>
+            </h2>
+            <!-- <p id="filter-count3" class="filter-count"></p> -->
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+            <div class="govuk-form-group">
+      
+              <fieldset class="govuk-fieldset">
+        
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+                  {% set formats = [ { name: 'Spreadsheet', count: 687 }, { name: 'PDF', count: 342 }, { name: 'CSV', count: 249 }, { name: 'Website', count: 138 }, { name: 'ZIP', count: 116 }, { name: 'Document', count: 42 }, { name: 'GeoPackage', count: 31 }, { name: 'Shapefile', count: 24 }, { name: 'XML', count: 24 }, { name: 'Image', count: 17 }, { name: 'data', count: 11 }, { name: 'API Endpoint', count: 10 }, { name: 'Slideshow', count: 7 }, { name: 'xlsm', count: 7 }, { name: 'rds', count: 5 }, { name: 'GeoJSON', count: 3 }, { name: 'Plain Text', count: 3 }, { name: 'JSON', count: 2 }, { name: 'msg', count: 2 }, { name: 'bin', count: 1 }, { name: 'db', count: 1 }, { name: 'dwg', count: 1 }, { name: 'Google Sheet', count: 1 }, { name: 'kml', count: 1 }, { name: 'skp', count: 1 }, { name: 'tab', count: 1 }, { name: 'url', count: 1 }, { name: 'wav', count: 1 }, { name: 'Web Map', count: 1 } ] %}
+  
+                  {% for i in formats %}
         
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="filter-{{i.name}}" name="filter-{{i.name}}" type="checkbox" value="1">

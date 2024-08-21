@@ -177,7 +177,12 @@ a.govuk-link {
     padding-left: 0px;
     li {
         display: inline;
+        &.content-li {
+            display: block;
+            margin-top: 3px;
+        }
     }
+    
 }
 
 a.filter__tag {
@@ -305,3 +310,4 @@ a.filter__tag {
 .govuk-summary-list__key {
     width: 40%;
 }
+
